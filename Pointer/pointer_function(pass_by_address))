@@ -1,0 +1,13 @@
+#include<iostream>
+
+void doublevalue(int* x) {
+    *x *= 2; // double the value at the address pointed to by x
+}
+
+int main() {
+    int x = 5;
+    doublevalue(&x); // pass the address of x
+    std::cout << x << std::endl; // output the doubled value
+    return 0;
+}
+    
