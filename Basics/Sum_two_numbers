@@ -1,0 +1,17 @@
+/* 
+*File: sum_two_numbers.cpp
+*Description: This program calculates the sum of two numbers entered by the user.
+*author: Young-ho Lee
+*date: 2026-04-21
+*/
+
+#include<iostream>
+
+int main(){
+    int a,b,sum;
+    std:: cout<< "enter two numbers :" << std::endl;
+    std:: cin >> a >> b;
+    sum = a + b;
+    std:: cout << "sum is: " << sum << std::endl;
+    return 0;
+}

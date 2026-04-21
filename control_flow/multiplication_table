@@ -1,0 +1,18 @@
+/* 
+*File: multiplication_table.cpp
+*Description: This program displays the multiplication table of a number entered by the user.
+*author: Young-ho Lee
+*date: 2026-04-21
+*/
+
+#include<iostream>
+
+int main() {
+    int n;
+    std::cout << "Enter a number: ";
+    std::cin >> n;
+
+    for (int i = 1; i < 10; ++i) {
+        std::cout << n << " x " << i << " = " << n * i << std::endl;
+    }
+}

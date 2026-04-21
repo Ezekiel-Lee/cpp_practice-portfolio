@@ -1,0 +1,32 @@
+/* 
+*File: find_max.cpp
+*Description: This program finds the maximum value in a series of numbers entered by the user.
+*author: Young-ho Lee
+*date: 2026-04-21
+*/
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+int main(){
+    std::vector<int> a;
+    int n, max_value;
+    std::cout << "enter numbers, and 0 to stop: " << std::endl;
+
+    while(true){ // it makes user free to enter as many numbers as they want until they decide to stop by entering 0
+        std::cin >> n;
+        if(n == 0){
+            break;
+        }
+        a.push_back(n);
+        if(n > max_value){
+            max_value = n;
+        }
+    }
+    if(!a.empty()){ // this case for preventing the case when user enters 0 at the beginning and we try to find max value in an empty array
+        std::cout << "The maximum value in the array is: " << max_value << std::endl;
+    } else { 
+        std::cout << "No numbers were entered." << std::endl;
+    }
+}

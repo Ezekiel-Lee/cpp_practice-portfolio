@@ -1,0 +1,56 @@
+/* 
+*File: car_class.cpp
+*Description: This program defines a simple car class with methods to accelerate, brake, and display the current speed. The user can interact with the car through a command-line interface.
+*author: Young-ho Lee
+*date: 2026-04-21
+*/
+#include<iostream>
+
+class car{
+    private:
+    int current_speed;
+    
+    public:
+    void accelerate(int speed){
+        current_speed += speed;
+    }
+    void brake(int speed){
+        current_speed -= speed;
+        if(current_speed < 0){
+            current_speed = 0;
+        }
+    }
+    void display_speed(){
+        std::cout << "Current speed: " << current_speed << " km/h" << std::endl;
+    }
+};
+
+int main(){
+    car myCar;
+    
+    while(true){
+        std::cout << "Enter command (a for accelerate, b for brake, d for display speed, q for quit): ";
+        char command;
+        std::cin >> command;
+
+        if(command == 'a'){
+            int speed;
+            std::cout << "Enter speed to accelerate: ";
+            std::cin >> speed;
+            myCar.accelerate(speed);
+        } else if(command == 'b'){
+            int speed;
+            std::cout << "Enter speed to brake: ";
+            std::cin >> speed;
+            myCar.brake(speed);
+        } else if(command == 'd'){
+            myCar.display_speed();
+        } else if(command == 'q'){
+            break;
+        } else {
+            std::cout << "Invalid command. Please try again." << std::endl;
+        }
+    }
+
+    return 0;
+}

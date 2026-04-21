@@ -1,0 +1,20 @@
+/* 
+*File: even_odd.cpp
+*Description: This program determines if a number entered by the user is even or odd.
+*author: Young-ho Lee
+*date: 2026-04-21
+*/
+
+#include<iostream>
+
+int main() {
+    int a;
+    std::cout << "Enter a number: " << std::endl;
+    std::cin >> a;
+    if (a % 2 == 0) {
+        std::cout << a << " is an even number." << std::endl;
+    } else {
+        std::cout << a << " is an odd number." << std::endl;   
+    }
+    return 0;    
+}

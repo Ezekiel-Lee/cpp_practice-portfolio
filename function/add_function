@@ -1,0 +1,21 @@
+/* 
+*File: add_function.cpp
+*Description: This program demonstrates the use of a function to add two numbers.
+*author: Young-ho Lee
+*date: 2026-04-21
+*/
+
+#include<iostream>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int num1, num2;
+    std:: cout << "Enter two numbers: ";
+    std:: cin >> num1 >> num2;
+    int result = add(num1, num2);
+    std:: cout << "The sum of " << num1 << " and " << num2 << " is: " << result << std::endl;
+    return 0;
+}

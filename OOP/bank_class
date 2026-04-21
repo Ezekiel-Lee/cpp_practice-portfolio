@@ -1,0 +1,66 @@
+#include<iostream>
+
+class bank{
+    private:
+        char name[50];
+        int account_number; 
+        double balance = 3000.51;
+    
+    public:
+        void input(){
+            std::cout << "Enter name: ";
+            std::cin >> name;
+            std::cout << "Enter account number: (without spaces) ";
+            std::cin >> account_number;
+        };
+        void deposit(double amount){
+            balance += amount;
+        };
+        void withdraw(double amount){
+            if(amount > balance){
+                std::cout << "Insufficient balance." << std::endl;
+            } else {
+                balance -= amount;
+            }
+        };
+        void display(){
+            std::cout << "Name: " << name << std::endl;
+            std::cout << "Account Number: " << account_number << std::endl;
+            std::cout << "Balance: $" << balance << std::endl;
+        };
+};
+
+int main(){
+    bank mybank;
+
+    std::cout<< "Welcome to the bank!" << std::endl;
+    mybank.input();
+
+    while(true){
+        std::cout << "enter command (d for deposit, w for withdraw, s for display, q for quit): ";
+        char command;
+        std::cin >> command;
+
+        switch(command){
+            case 'd':
+                double deposit_amount;
+                std::cout << "Enter deposit amount: ";
+                std::cin >> deposit_amount;
+                mybank.deposit(deposit_amount);
+                break;
+            case 'w':
+                double withdraw_amount;
+                std::cout << "Enter withdrawal amount: ";
+                std::cin >> withdraw_amount;
+                mybank.withdraw(withdraw_amount);
+                break;
+            case 's':
+                mybank.display();
+                break;
+            case 'q':
+                return 0;
+            default:
+                std::cout << "Invalid command." << std::endl;
+        }
+    }
+}

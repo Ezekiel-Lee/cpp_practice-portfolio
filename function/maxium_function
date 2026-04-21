@@ -1,0 +1,21 @@
+/* 
+*File: max_function.cpp
+*Description: This program demonstrates the use of a function to find the maximum of two numbers.
+*author: Young-ho Lee
+*date: 2026-04-21
+*/
+
+#include<iostream>
+
+int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    int num1, num2, num3;
+    std:: cout << "Enter three numbers: ";
+    std:: cin >> num1 >> num2 >> num3;
+    int result = max(max(num1, num2), num3);
+    std:: cout << "The maximum of " << num1 << ", " << num2 << ", and " << num3 << " is: " << result << std::endl;
+    return 0;
+}

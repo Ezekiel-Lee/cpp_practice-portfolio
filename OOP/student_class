@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+
+class Student {
+private:
+    std::string name;
+    int age;
+
+public:
+    // Constructor
+    void input() {
+        std::cout << "enter name: ";
+        std::cin >> name;
+
+        std::cout << "enter age: ";
+        std::cin >> age;
+    }
+    void display() {
+        std::cout << "Name: " << name << std::endl;
+        std::cout << "Age: " << age << std::endl;
+    }
+};
+
+int main() {
+    Student student;
+    student.input();
+    student.display();
+    return 0;
+}
