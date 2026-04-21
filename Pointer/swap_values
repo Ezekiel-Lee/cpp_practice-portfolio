@@ -1,0 +1,19 @@
+#include<iostream>
+
+void swap(int* a, int* b) {
+    int temp = *a; // store the value at address a in temp
+    *a = *b;       // assign the value at address b to address a
+    *b = temp;     // assign the value stored in temp to address b
+}
+
+int main() {
+    int x, y;
+    std::cout << "enter two numbers: ";
+    std::cin >> x >> y;
+    std::cout << "Before swapping: x = " << x << ", y = " << y << std::endl;
+    
+    swap(&x, &y); // pass the addresses of x and y to the swap function
+    
+    std::cout << "After swapping: x = " << x << ", y = " << y << std::endl;
+    return 0;
+}
